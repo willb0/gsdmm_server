@@ -24,22 +24,24 @@ struct Tests {
     tests: Vec<TopicModelingRequest>
 }
 
-
 #[actix_web::test]
 async fn test_validate_body_ok() {
     let mut app = test::init_service(App::new().service(routes::validate_body)).await;
     let data = fs::read_to_string("tests/tests.json").expect("Unable to read file");
     let payloads: Tests = serde_json::from_str(&data).expect("Unable to parse");
-    let currPayload = &payloads.tests[0];
+    let curr_payload = &payloads.tests[0];
+    println!("{}",curr_payload.to_string());
     let response = test::TestRequest::post()
         .uri("/validate_body")
         .append_header(("Content-Type", "application/json"))
-        .set_payload(currPayload.to_string())
+        .set_payload(curr_payload.to_string())
         .send_request(&mut app)
         .await;
     let body = to_bytes(response.into_body()).await.unwrap();
+    println!("{}",body.as_str());
     let json_body:TopicModelingRequest  = serde_json::from_str(body.as_str()).expect("Couldn't parse the json ");
-    assert!(json_body == *currPayload);
+    
+    assert!(json_body == *curr_payload);
 }
 
 #[actix_web::test]
@@ -47,16 +49,16 @@ async fn test_validate_body_not_ok() {
     let mut app = test::init_service(App::new().service(routes::validate_body)).await;
     let data = fs::read_to_string("tests/tests.json").expect("Unable to read file");
     let payloads: Tests = serde_json::from_str(&data).expect("Unable to parse");
-    let currPayload = &payloads.tests[1];
+    let curr_payload = &payloads.tests[1];
     let response = test::TestRequest::post()
         .uri("/validate_body")
         .append_header(("Content-Type", "application/json"))
-        .set_payload(currPayload.to_string())
+        .set_payload(curr_payload.to_string())
         .send_request(&mut app)
         .await;
     let body = to_bytes(response.into_body()).await.unwrap();
     let json_body:TopicModelingRequest  = serde_json::from_str(body.as_str()).expect("Couldn't parse the json ");
-    assert!(json_body == *currPayload);
+    assert!(json_body == *curr_payload);
 }
 
 

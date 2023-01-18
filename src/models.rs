@@ -3,12 +3,12 @@ use validator::Validate;
 
 
 
-#[derive(Serialize, Deserialize, Validate,PartialEq,PartialOrd)]
+#[derive(Serialize, Deserialize, Validate,PartialEq,PartialOrd,Debug)]
 pub struct TopicModelingRequest {
-    pub documents: Vec<String>,
+    pub documents: Vec<Vec<String>>,
     pub vocab: Vec<String>,
-    pub max_clusters: u32,
-    pub alpha: f32,
-    pub beta: f32,
+    pub max_clusters: usize,
+    pub alpha: f64,
+    pub beta: f64,
 }
 

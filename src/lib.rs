@@ -1,12 +1,12 @@
 use serde::{Deserialize, Serialize};
 use std::fmt;
-use std::marker::Copy;
 use validator::Validate;
 use crate::models::TopicModelingRequest;
 
 
 pub mod routes;
 pub mod models;
+pub mod utils;
 
 pub trait ToString {
     fn to_json_string(&self) -> String;
