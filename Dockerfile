@@ -8,9 +8,7 @@ COPY Cargo.toml Cargo.lock ./
 COPY ./src src
 
 # build dependencies, when my source code changes, this build can be cached, we don't need to compile dependency again.
-RUN --mount=type=cache,target=/usr/local/cargo/registry \
-    --mount=type=cache,target=/home/root/app/target \
-    cargo build
+RUN cargo build
 # remove the dummy build.
 RUN cargo clean -p gsdmm_server
 
