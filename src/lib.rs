@@ -2,11 +2,18 @@ use serde::{Deserialize, Serialize};
 use std::fmt;
 use validator::Validate;
 use crate::models::TopicModelingRequest;
+use crate::models::TrainingError;
 
 
 pub mod routes;
 pub mod models;
 pub mod utils;
+
+impl fmt::Display for TrainingError {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "training the GSDMM model failed")
+    }
+}
 
 pub trait ToString {
     fn to_json_string(&self) -> String;

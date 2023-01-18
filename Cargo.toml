@@ -7,8 +7,8 @@ edition = "2021"
 
 [dependencies]
 gsdmm = { git = "https://github.com/rwalk/gsdmm-rust.git"}
-docopt = "1"
 serde = { version = "1", features = ["derive"] }
 validator = { version = "0.12", features = ["derive"] }
 actix-web = "4.0"
 serde_json = "1.0"
+

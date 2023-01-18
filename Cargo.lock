@@ -386,19 +386,7 @@ dependencies = [
  "lazy_static 0.2.11",
  "regex 0.2.11",
  "rustc-serialize",
- "strsim 0.6.0",
-]
-
-[[package]]
-name = "docopt"
-version = "1.1.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7f3f119846c823f9eafcf953a8f6ffb6ed69bf6240883261a7f13b634579a51f"
-dependencies = [
- "lazy_static 1.4.0",
- "regex 1.7.1",
- "serde",
- "strsim 0.10.0",
+ "strsim",
 ]
 
 [[package]]
@@ -497,7 +485,7 @@ name = "gsdmm"
 version = "0.1.0"
 source = "git+https://github.com/rwalk/gsdmm-rust.git#157ae45f8340e0686fdc3c7c5371ffa8a1de11ef"
 dependencies = [
- "docopt 0.7.0",
+ "docopt",
  "fnv",
  "random_choice",
  "rustc-serialize",
@@ -508,7 +496,6 @@ name = "gsdmm_server"
 version = "0.1.0"
 dependencies = [
  "actix-web",
- "docopt 1.1.1",
  "gsdmm",
  "serde",
  "serde_json",
@@ -1101,12 +1088,6 @@ name = "strsim"
 version = "0.6.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b4d15c810519a91cf877e7e36e63fe068815c678181439f2f29e2562147c3694"
-
-[[package]]
-name = "strsim"
-version = "0.10.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "73473c0e59e6d5812c5dfe2a064a6444949f089e20eec9a2e5506596494e4623"
 
 [[package]]
 name = "syn"

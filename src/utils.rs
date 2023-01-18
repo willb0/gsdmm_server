@@ -2,20 +2,13 @@ extern crate gsdmm;
 
 use gsdmm::GSDMM;
 use crate::models::TopicModelingRequest;
-use std::fmt;
 use std::collections::HashSet;
 use std::iter::FromIterator;
 use std::fs::File;
 use std::io::{BufRead, BufReader};
+use crate::models::TrainingError;
 
-#[derive(Debug,Clone)]
-pub struct TrainingError;
 
-impl fmt::Display for TrainingError {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(f, "training the GSDMM model failed")
-    }
-}
 
 pub fn train_gsdmm(data: &TopicModelingRequest) -> Result<Vec<usize>,TrainingError> {
     let vocab = HashSet::from_iter(data.vocab.iter().cloned());

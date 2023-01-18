@@ -12,3 +12,6 @@ pub struct TopicModelingRequest {
     pub beta: f64,
 }
 
+#[derive(Debug,Clone)]
+pub struct TrainingError;
+
