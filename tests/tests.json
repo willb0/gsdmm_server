@@ -1,0 +1,25 @@
+[
+    {
+        "documents": [
+            "Penis munchers"
+        ],
+        "vocab": [
+            "penis",
+            "munchers"
+        ],
+        "max_clusters": 10,
+        "alpha": 0.1,
+        "beta": 0.2
+    },
+    {
+        "documents": [
+            "penis",
+            10,
+            20
+        ],
+        "vocab": "penis poopy butt",
+        "max_clusters": 10,
+        "alpha": 0.1,
+        "beta": 0.2
+    }
+]
