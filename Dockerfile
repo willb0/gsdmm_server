@@ -18,7 +18,7 @@ RUN cargo install --path .
 
 # second stage.
 FROM alpine:3.14
-COPY --from=build /usr/local/cargo/bin/* /usr/local/bin/
+COPY --from=build /usr/local/cargo/bin/* /usr/local/bin
 EXPOSE 8080
 CMD ["gsdmm_server"]
 
