@@ -12,7 +12,7 @@ async fn main() -> std::io::Result<()> {
             .service(routes::validate_body)
             .service(routes::model_endpoint)
     })
-    .bind(("localhost", 8080))?
+    .bind(("0.0.0.0", 8080))?
     .run()
     .await
 }

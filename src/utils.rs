@@ -18,14 +18,19 @@ pub fn train_gsdmm(data: &TopicModelingRequest) -> Result<Vec<usize>,TrainingErr
     Ok(model.labels)
 }
 
-fn lines_from_file(filename: &str) -> Vec<String> {
-    let error_msg = format!("Could not read file {}!", filename);
-    let file = File::open(filename).expect(&error_msg);
-    let buf = BufReader::new(file);
-    buf.lines()
-        .map(|l| l.expect("Could not parse line!"))
-        .collect()
+/*
+fn raw_text_to_tokens(documents: Vec<String>) -> Vec<Vec<String>>{ 
+    let mut tokens: Vec<Vec<String>> = Vec::new();
+    for document in &mut documents.into_iter() {
+        tokens.push(Vec::new());
+        let last = tokens.last().expect("Couldnt get the last vec");
+        let string:String = "hello".to_owned();
+        last.push(string);
+    }
+    return tokens;
 }
+*/
+
 
 fn row_has_nan(row: &Vec<(usize, &f64)>, doc: &String) -> bool {
     for entry in row {
