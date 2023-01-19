@@ -1,4 +1,4 @@
-use actix_web::{Error, post, web::{self,Json}, Responder, HttpResponse};
+use actix_web::{post, web::{Json}, Responder, HttpResponse};
 use validator::Validate;
 use crate::models;
 use crate::utils;

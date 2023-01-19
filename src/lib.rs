@@ -1,6 +1,4 @@
-use serde::{Deserialize, Serialize};
 use std::fmt;
-use validator::Validate;
 use crate::models::TopicModelingRequest;
 use crate::models::TrainingError;
 

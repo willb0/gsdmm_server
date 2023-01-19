@@ -4,8 +4,6 @@ use gsdmm::GSDMM;
 use crate::models::TopicModelingRequest;
 use std::collections::HashSet;
 use std::iter::FromIterator;
-use std::fs::File;
-use std::io::{BufRead, BufReader};
 use crate::models::TrainingError;
 
 
@@ -31,13 +29,3 @@ fn raw_text_to_tokens(documents: Vec<String>) -> Vec<Vec<String>>{
 }
 */
 
-
-fn row_has_nan(row: &Vec<(usize, &f64)>, doc: &String) -> bool {
-    for entry in row {
-        if entry.1.is_nan() {
-            println!("Cluster: {:?} has NaN score for document {:?}", entry, doc);
-            return true;
-        }
-    }
-    return false;
-}
