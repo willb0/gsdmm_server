@@ -2,7 +2,7 @@
     {
         "documents": [
             [
-                "Penis",
+                "food",
                 "munchers"
             ],
             [
@@ -10,7 +10,7 @@
             ]
         ],
         "vocab": [
-            "penis",
+            "food",
             "munchers"
         ],
         "max_clusters": 10,
